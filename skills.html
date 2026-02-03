@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Skills - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>My Skills</h1>
+        <p class="breadcrumb">Home > Skills</p>
+    </div>
+</div>
+
+<section class="skills-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Expertise</h2>
+            <p class="section-subtitle">Technologies and tools I specialize in</p>
+        </div>
+        
+        <div class="skills-grid-detailed">
+            {% for category, skill_list in skills.items() %}
+            <div class="skill-category-card">
+                <h3 class="category-title">{{ category }}</h3>
+                <div class="skill-items-grid">
+                    {% for skill in skill_list %}
+                    <div class="skill-item-detailed">
+                        <div class="skill-icon">⭐</div>
+                        <p>{{ skill }}</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: {{ 70 + loop.index * 5 }}%"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="proficiency-section">
+    <div class="container">
+        <h2 class="section-title">Proficiency Levels</h2>
+        
+        <div class="proficiency-grid">
+            <div class="proficiency-card">
+                <h3>Expert</h3>
+                <ul class="proficiency-list">
+                    <li>Python & Flask</li>
+                    <li>JavaScript/React</li>
+                    <li>SQL Databases</li>
+                    <li>REST APIs</li>
+                </ul>
+            </div>
+            
+            <div class="proficiency-card">
+                <h3>Intermediate</h3>
+                <ul class="proficiency-list">
+                    <li>Docker & Kubernetes</li>
+                    <li>Cloud Platforms</li>
+                    <li>GraphQL</li>
+                    <li>DevOps Tools</li>
+                </ul>
+            </div>
+            
+            <div class="proficiency-card">
+                <h3>Fundamental</h3>
+                <ul class="proficiency-list">
+                    <li>Machine Learning</li>
+                    <li>Mobile Development</li>
+                    <li>Blockchain</li>
+                    <li>Web3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="certifications-section">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        
+        <div class="certifications-grid">
+            <div class="certification-card">
+                <h3>AWS Certified Developer - Associate</h3>
+                <p><strong>Amazon Web Services</strong></p>
+                <p class="cert-date">Issued: Jan 2023</p>
+                <p class="cert-detail">Credential ID: AWS-2023-001</p>
+            </div>
+            
+            <div class="certification-card">
+                <h3>Google Cloud Professional</h3>
+                <p><strong>Google Cloud</strong></p>
+                <p class="cert-date">Issued: Jun 2022</p>
+                <p class="cert-detail">Credential ID: GCP-2022-001</p>
+            </div>
+            
+            <div class="certification-card">
+                <h3>Python Programming Master</h3>
+                <p><strong>Online Platform</strong></p>
+                <p class="cert-date">Issued: Mar 2021</p>
+                <p class="cert-detail">Credential ID: PYTHON-2021-001</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tools-section">
+    <div class="container">
+        <h2 class="section-title">Tools & Platforms</h2>
+        
+        <div class="tools-grid">
+            <div class="tool-item">
+                <h4>Version Control</h4>
+                <p>Git, GitHub, GitLab, Bitbucket</p>
+            </div>
+            <div class="tool-item">
+                <h4>Development</h4>
+                <p>VS Code, PyCharm, IntelliJ IDEA</p>
+            </div>
+            <div class="tool-item">
+                <h4>Design</h4>
+                <p>Figma, Adobe XD, Sketch</p>
+            </div>
+            <div class="tool-item">
+                <h4>Deployment</h4>
+                <p>Docker, Jenkins, GitHub Actions</p>
+            </div>
+            <div class="tool-item">
+                <h4>Databases</h4>
+                <p>PostgreSQL, MongoDB, Redis, MySQL</p>
+            </div>
+            <div class="tool-item">
+                <h4>Cloud</h4>
+                <p>AWS, Google Cloud, Azure, Heroku</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

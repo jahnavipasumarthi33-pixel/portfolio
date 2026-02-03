@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Services - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Services</h1>
+        <p class="breadcrumb">Home > Services</p>
+    </div>
+</div>
+
+<section class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>What I Offer</h2>
+            <p class="section-subtitle">Comprehensive development services tailored to your needs</p>
+        </div>
+        
+        <div class="services-grid">
+            {% for service in services %}
+            <div class="service-card">
+                <div class="service-icon">{{ service.icon }}</div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="detailed-services">
+    <div class="container">
+        <div class="service-detail-item">
+            <div class="service-detail-grid">
+                <div class="service-detail-text">
+                    <h2>Web Development</h2>
+                    <p>I create responsive, high-performance web applications using modern technologies. 
+                    From concept to deployment, I handle every aspect of web development.</p>
+                    
+                    <h4>What's Included:</h4>
+                    <ul class="service-list">
+                        <li>Custom web application development</li>
+                        <li>Responsive design implementation</li>
+                        <li>Performance optimization</li>
+                        <li>SEO optimization</li>
+                        <li>Security hardening</li>
+                    </ul>
+                </div>
+                <div class="service-detail-image">
+                    <div class="placeholder-service">💻</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-item">
+            <div class="service-detail-grid">
+                <div class="service-detail-image">
+                    <div class="placeholder-service">⚙️</div>
+                </div>
+                <div class="service-detail-text">
+                    <h2>API Development</h2>
+                    <p>Build robust and scalable APIs that power your applications and integrate 
+                    with third-party services seamlessly.</p>
+                    
+                    <h4>What's Included:</h4>
+                    <ul class="service-list">
+                        <li>RESTful API design and development</li>
+                        <li>GraphQL API implementation</li>
+                        <li>API documentation</li>
+                        <li>Authentication & Authorization</li>
+                        <li>Rate limiting & Caching</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-item">
+            <div class="service-detail-grid">
+                <div class="service-detail-text">
+                    <h2>Database Design & Optimization</h2>
+                    <p>Expert database architecture design and optimization for maximum performance 
+                    and reliability of your applications.</p>
+                    
+                    <h4>What's Included:</h4>
+                    <ul class="service-list">
+                        <li>Database schema design</li>
+                        <li>Query optimization</li>
+                        <li>Index optimization</li>
+                        <li>Data migration</li>
+                        <li>Backup & Recovery strategies</li>
+                    </ul>
+                </div>
+                <div class="service-detail-image">
+                    <div class="placeholder-service">🗄️</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-detail-item">
+            <div class="service-detail-grid">
+                <div class="service-detail-image">
+                    <div class="placeholder-service">📋</div>
+                </div>
+                <div class="service-detail-text">
+                    <h2>Technical Consulting</h2>
+                    <p>Get expert advice on architecture, technology selection, and best practices 
+                    to improve your development process.</p>
+                    
+                    <h4>What's Included:</h4>
+                    <ul class="service-list">
+                        <li>Architecture review</li>
+                        <li>Technology recommendations</li>
+                        <li>Code review & feedback</li>
+                        <li>Performance analysis</li>
+                        <li>Team training & mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing-section">
+    <div class="container">
+        <h2 class="section-title">Pricing Plans</h2>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$500</div>
+                <p class="price-period">Per Project</p>
+                <ul class="pricing-features">
+                    <li>Small projects</li>
+                    <li>Up to 1 month</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="btn btn-secondary">Get Started</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>Professional</h3>
+                <div class="price">$2,000</div>
+                <p class="price-period">Per Project</p>
+                <ul class="pricing-features">
+                    <li>Medium projects</li>
+                    <li>Up to 3 months</li>
+                    <li>Priority support</li>
+                    <li>Unlimited revisions</li>
+                </ul>
+                <button class="btn btn-primary">Recommended</button>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">Custom</div>
+                <p class="price-period">Contact for Quote</p>
+                <ul class="pricing-features">
+                    <li>Large-scale projects</li>
+                    <li>Flexible timeline</li>
+                    <li>24/7 support</li>
+                    <li>Dedicated team</li>
+                </ul>
+                <button class="btn btn-secondary">Contact</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p>Let's discuss your project requirements and create something amazing together.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Get In Touch</a>
+    </div>
+</section>
+
+{% endblock %}

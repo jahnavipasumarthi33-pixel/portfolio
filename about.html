@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>{{ resume_data.name }}</h1>
+        <p class="breadcrumb">{{ resume_data.contact }}</p>
+        <p class="lead">{{ resume_data.summary }}</p>
+        <a href="{{ url_for('download', filename='JAHNAVI_PASUMARTHI_resume.txt') }}" class="btn btn-primary">Download Resume</a>
+    </div>
+</div>
+
+<section class="about-section">
+    <div class="container">
+        <div class="columns">
+            <main>
+                <h2>Summary</h2>
+                <p>{{ resume_data.summary }}</p>
+
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    {% for proj in resume_data.projects %}
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>{{ proj.title }}</h3>
+                            <p>{{ proj.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    {% for section, items in resume_data.skills.items() %}
+                    <div class="skill-category">
+                        <h3>{{ section }}</h3>
+                        <ul>
+                            {% for item in items %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <h3>Certifications</h3>
+                <ul>
+                    {% for cert in resume_data.certifications %}
+                    <li>{{ cert }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Education</h3>
+                <ul>
+                    {% for edu in resume_data.education %}
+                    <li><strong>{{ edu.degree }}</strong><br>{{ edu.institution }} ({{ edu.years }}) — Aggregate: {{ edu.aggregate }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Declaration</h3>
+                <p>I hereby declare that the above information is true and correct to the best of my knowledge and belief.<br>
+                <strong>Place:</strong> Sathupally</p>
+            </aside>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Feedback & Testimonials</h1>
+        <p class="breadcrumb">Home > Feedback</p>
+    </div>
+</div>
+
+<section class="feedback-section">
+    <div class="container">
+        <div class="feedback-grid">
+            <div class="feedback-form-wrapper">
+                <h2>Share Your Feedback</h2>
+                <p>I'd love to hear your thoughts! Please share any feedback or suggestions.</p>
+                
+                <form method="POST" enctype="multipart/form-data" class="feedback-form">
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback *</label>
+                        <textarea id="feedback" name="feedback" rows="6" required 
+                                  class="form-textarea" 
+                                  placeholder="Share your thoughts..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" class="form-select">
+                            <option value="">Select a rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ Very Good</option>
+                            <option value="3">⭐⭐⭐ Good</option>
+                            <option value="2">⭐⭐ Fair</option>
+                            <option value="1">⭐ Poor</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attachment">Attachment (Optional)</label>
+                        <input type="file" id="attachment" name="attachment" class="form-input"
+                               accept=".pdf,.txt,.doc,.docx,.png,.jpg,.jpeg,.gif">
+                        <small>Max file size: 16MB</small>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Submit Feedback</button>
+                </form>
+            </div>
+            
+            <div class="testimonials-wrapper">
+                <h2>Client Testimonials</h2>
+                <p>What clients have to say about working with me.</p>
+                
+                <div class="testimonials-list">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Outstanding work! The developer was professional, 
+                        responsive, and delivered exactly what we needed. Highly recommended!"</p>
+                        <p class="testimonial-author">- Sarah Johnson, CEO of Tech Startup</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Great communication, excellent code quality, and delivered 
+                        on time. A true professional to work with."</p>
+                        <p class="testimonial-author">- Michael Chen, Project Manager</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The application has exceeded our expectations in terms of 
+                        performance and user experience. Very satisfied with the results."</p>
+                        <p class="testimonial-author">- Emily Rodriguez, Product Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

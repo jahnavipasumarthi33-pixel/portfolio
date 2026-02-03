@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>{{ project.title }}</h1>
+        <p class="breadcrumb"><a href="{{ url_for('portfolio') }}">Portfolio</a> > {{ project.title }}</p>
+    </div>
+</div>
+
+<section class="project-detail">
+    <div class="container">
+        <div class="project-detail-grid">
+            <div class="project-detail-main">
+                <div class="project-image-detail">
+                    <div class="placeholder-image-large">{{ project.title[0] }}</div>
+                </div>
+                
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>{{ project.description }}</p>
+                    
+                    <h3>Project Goals</h3>
+                    <ul>
+                        <li>Create a scalable and maintainable solution</li>
+                        <li>Implement modern best practices and design patterns</li>
+                        <li>Deliver exceptional user experience</li>
+                        <li>Ensure high performance and security</li>
+                    </ul>
+                    
+                    <h3>Challenges & Solutions</h3>
+                    <p>The project presented several challenges including performance optimization, 
+                    database scaling, and user authentication. We overcame these by implementing 
+                    caching strategies, database indexing, and secure authentication mechanisms.</p>
+                    
+                    <h3>Results</h3>
+                    <p>The final solution exceeded expectations with a 40% improvement in performance, 
+                    99.9% uptime, and positive user feedback. The client reported a 25% increase in 
+                    user engagement.</p>
+                </div>
+            </div>
+            
+            <div class="project-detail-sidebar">
+                <div class="info-box">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-list">
+                        {% for tech in project.technologies %}
+                        <span class="tech-badge-large">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Project Details</h3>
+                    <ul class="details-list">
+                        <li><strong>Type:</strong> Web Application</li>
+                        <li><strong>Timeline:</strong> 6 months</li>
+                        <li><strong>Team Size:</strong> 5 developers</li>
+                        <li><strong>Status:</strong> Completed</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Client Feedback</h3>
+                    <blockquote>"Outstanding work! The team delivered exactly what we needed on time and within budget."</blockquote>
+                    <p class="quote-author">- Client Name, Company</p>
+                </div>
+                
+                <div class="project-actions">
+                    <a href="#" class="btn btn-primary" target="_blank">View Live Project</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">View Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related-projects">
+    <div class="container">
+        <h2 class="section-title">Other Projects</h2>
+        <div class="text-center">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-primary">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
